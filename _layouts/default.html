@@ -5,16 +5,32 @@
 
   <body>
 
-    {% include header.html %}
+    <nav class="sidebar">
+      <h1><a href={{site.baseurl}}>Anne Geiersbach<a></h1>
+      <ul class="sidebar-items">
+        {% for post in site.posts %}
+          <li class="sidebar-item">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <ul class="sidebar-bottom">
+        <li>Web Developer</li>
+        <li>{{ site.email }}</li>
+        {% if site.github_username %}
+        <li>
+          {% include icon-github.html username=site.github_username %}
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
 
     <div class="page-content">
       <div class="wrapper">
         {{ content }}
       </div>
     </div>
-
-    {% include footer.html %}
-
   </body>
-
 </html>

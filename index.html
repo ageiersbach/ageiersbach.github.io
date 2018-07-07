@@ -3,33 +3,29 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  <div class="latest-post">
+    {% if site.posts.first %}
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          {{ site.posts.first.title }}
         </h2>
+        <p class="post-meta">
+          <time datetime="{{ site.posts.first.page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ site.posts.first.date | date: "%b %-d, %Y" }}
+          </time>
+        </p>
+      </header>
 
-        <div class="post-excerpt">
-          {{ post.excerpt }}
-          <div class="tags">
-            <ul>
-              {% for tag in post.tags %}
-                <li>{{ tag }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
+      <div class="post-content" itemprop="articleBody">
+        {{ site.posts.first.content }}
+      </div>
+    </article>
 
-      </li>
-    {% endfor %}
-  </ul>
+      <span class="pull-left">
+        <a href={{ site.posts[1].url }}>< Previous</a>
+      </span>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    {% endif %}
+  </div>
 </div>
