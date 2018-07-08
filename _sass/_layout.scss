@@ -92,6 +92,25 @@
     }
 }
 
+.project {
+
+  .project-link {
+    display: inline-block;
+
+    .project-icon {
+      display: inline-block;
+
+      .icon svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    .github-project-name {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+}
 
 
 /**
