@@ -2,6 +2,7 @@
 layout: project
 link: "ageiersbach/RomanDate"
 project: "RomanDate"
+tag: "roman"
 ---
 
 I created this app to learn Erlang. It takes a Date and returns a string

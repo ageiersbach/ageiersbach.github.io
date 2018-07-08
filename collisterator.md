@@ -2,6 +2,7 @@
 layout: project
 link: "webcrofting/collisterator"
 project: "Collisterator"
+tag: "collisterator"
 ---
 
 This project was my first official Rails app, which I started in 2013 under the
