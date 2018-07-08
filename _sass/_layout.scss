@@ -42,7 +42,7 @@
         }
     }
 
-    @include media-query($on-palm) {
+    @include media-mobile($on-palm) {
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
@@ -112,6 +112,12 @@
   }
 }
 
+// List of projects partial
+.projects {
+  list-style: none;
+  margin-left: 0;
+}
+
 
 /**
  * Site footer
@@ -160,7 +166,13 @@
     width:         calc(45% - (#{$spacing-unit} / 2));
 }
 
-@include media-query($on-laptop) {
+@include media-normal($on-laptop) {
+    nav.header-bar {
+      display: none;
+    }
+    nav.sidebar {
+      display: block;
+    }
     .footer-col-1,
     .footer-col-2 {
         width: -webkit-calc(50% - (#{$spacing-unit} / 2));
@@ -173,7 +185,20 @@
     }
 }
 
-@include media-query($on-palm) {
+@include media-mobile($on-palm) {
+    nav.header-bar {
+      display: block;
+    }
+    nav.sidebar {
+      display: none;
+    }
+    .page-content {
+      margin-left: 0px;
+      margin-top: 80px;
+    }
+    h1.post-title {
+      font-size: 28px;
+    }
     .footer-col {
         float: none;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
@@ -242,7 +267,7 @@
     letter-spacing: -1px;
     line-height: 1;
 
-    @include media-query($on-laptop) {
+    @include media-normal($on-laptop) {
         font-size: 36px;
     }
 }
@@ -253,7 +278,7 @@
     h2 {
         font-size: 32px;
 
-        @include media-query($on-laptop) {
+        @include media-normal($on-laptop) {
             font-size: 28px;
         }
     }
@@ -261,7 +286,7 @@
     h3 {
         font-size: 26px;
 
-        @include media-query($on-laptop) {
+        @include media-normal($on-laptop) {
             font-size: 22px;
         }
     }
@@ -269,7 +294,7 @@
     h4 {
         font-size: 20px;
 
-        @include media-query($on-laptop) {
+        @include media-normal($on-laptop) {
             font-size: 18px;
         }
     }

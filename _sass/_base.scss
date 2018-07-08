@@ -149,19 +149,48 @@ pre {
         padding-left: 0;
     }
 }
+nav.header-bar {
+  background-color: #eef;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+
+  text-align: center;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
 
 nav.sidebar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   width: 300px;
   padding: 10px;
   background-color: #eef;
 
-  h1 {
+  .sidebar-title {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
     text-align: center;
+  }
+  .sidebar-top {
+    position: fixed;
+    top: 36px;
+    left: 8px;
+    bottom: 92px;
+    overflow-y: auto;
+  }
+
+  .projects .project-description {
+    display: none;
   }
 
   h3 {
@@ -179,6 +208,7 @@ nav.sidebar {
   }
 
   .sidebar-bottom {
+    background-color: #eef;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -196,19 +226,30 @@ nav.sidebar {
   margin-left: 320px;
 }
 
+.posts-index {
+  ul {
+    list-style: none;
+  }
+  .post-date {
+    padding-left: 12px;
+  }
+  .post-meta {
+    color: #9595b7;
+  }
+}
+
+
+
 /**
  * Wrapper
  */
 .wrapper {
-    margin-right: auto;
-    margin-left: auto;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
     @extend %clearfix;
 
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    @include media-normal($on-laptop) {
+        max-width: 1200px;
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
     }

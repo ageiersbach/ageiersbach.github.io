@@ -1,0 +1,56 @@
+<nav class="sidebar">
+  <h1 class="sidebar-title"><a href={{site.baseurl}}>Anne Geiersbach<a></h1>
+
+
+  <div class="sidebar-top">
+    <h3>Projects</h3>
+
+    <ul class="sidebar-items">
+      <li>
+        <a href={{"cmdrlog.html" | relative_url }}>
+          CMDRLog (Rails)
+        </a>
+      </li>
+      <li>
+        <a href={{"collisterator.html" | relative_url }}>
+          Collisterator (Rails)
+        </a>
+      </li>
+      <li>
+        <a href={{"inferno.html" | relative_url}}>
+          Inferno (Phoenix)
+        </a>
+      </li>
+      <li>
+        <a href={{"roman.html" | relative_url}}>
+          RomanDate (Erlang)
+        </a>
+      </li>
+      <li>
+        <a href={{"viola" | relative_url }}>
+          Viola (Rust)
+        </a>
+      </li>
+    </ul>
+
+    <h3>Posts</h3>
+    <ul class="sidebar-items">
+      {% for post in site.posts %}
+        <li class="sidebar-item">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <ul class="sidebar-bottom">
+    <li>Web Developer</li>
+    <li>{{ site.email }}</li>
+    {% if site.github_username %}
+    <li>
+      {% include icon-github.html username=site.github_username %}
+    </li>
+    {% endif %}
+  </ul>
+</nav>
