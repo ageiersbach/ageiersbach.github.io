@@ -212,7 +212,7 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
+    padding: 8px 0;
 }
 
 .page-heading {
@@ -266,21 +266,17 @@
 .post-title {
     letter-spacing: -1px;
     line-height: 1;
+}
 
-    @include media-normal($on-laptop) {
-        font-size: 36px;
-    }
+.post-date {
+    color: $grey-color;
 }
 
 .post-content {
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 32px;
-
-        @include media-normal($on-laptop) {
-            font-size: 28px;
-        }
+        font-size: 28px;
     }
 
     h3 {
